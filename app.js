@@ -55,25 +55,23 @@ router.route('/asignaturas').post((request, response)=>{
     })
 })
 
-router.route('/asignaturas/:id').put((request, response)=>{
+router.route('/asignaturas').put((request, response)=>{
     let asignatura = {...request.body}
-    asignaturaController.editar(asignatura,request.params.id).then(result =>{
+    //asignaturaController.editar(asignatura,request.params.id).then(result =>{
+    asignaturaController.editar(asignatura).then(result =>{
        response.json(result)     
         console.log(result)
     })
 })
 
 router.route('/asignaturas/:id').delete((request, response)=>{
-   let asignatura = {...request.body}
-    asignaturaController.deleteId(asignatura,request.params.id).then(result =>{
+    //let asignatura = {...request.body}
+    //asignaturaController.deleteId(asignatura,request.params.id).then(result =>{
+    asignaturaController.deleteId(request.params.id).then(result =>{
        response.json(result)     
        console.log('Eliminado!!!')
     })
 })
-
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //::::::::::::::::::::::::::route:asignaturas ::::::::::::::::::::::::::::::::::::
 router.route('/asignaturas').get((request, response)=>{
@@ -98,17 +96,19 @@ router.route('/asignaturas').post((request, response)=>{
     })
 })
 
-router.route('/asignaturas/:id').put((request, response)=>{
+router.route('/asignaturas').put((request, response)=>{
     let asignatura = {...request.body}
-    asignaturaController.editar(asignatura,request.params.id).then(result =>{
+    //asignaturaController.editar(asignatura,request.params.id).then(result =>{
+    asignaturaController.editar(asignatura).then(result =>{
        response.json(result)     
         console.log(result)
     })
 })
 
 router.route('/asignaturas/:id').delete((request, response)=>{
-   let asignatura = {...request.body}
-    asignaturaController.deleteId(asignatura,request.params.id).then(result =>{
+    //let asignatura = {...request.body}
+    //asignaturaController.deleteId(asignatura,request.params.id).then(result =>{
+    asignaturaController.deleteId(request.params.id).then(result =>{
        response.json(result)     
        console.log('Eliminado!!!')
     })
@@ -138,17 +138,17 @@ router.route('/estudiantes').post((request, response)=>{
     })
 })
 
-router.route('/estudiantes/:id').put((request, response)=>{
+router.route('/estudiantes').put((request, response)=>{
     let estudiante = {...request.body}
-    estudianteController.editar(estudiante,request.params.id).then(result =>{
+    estudianteController.editar(estudiante).then(result =>{
        response.json(result)     
         console.log(result)
     })
 })
 
 router.route('/estudiantes/:id').delete((request, response)=>{
-   let estudiante = {...request.body}
-   estudianteController.deleteId(estudiante,request.params.id).then(result =>{
+   //let estudiante = {...request.body}
+   estudianteController.deleteId(request.params.id).then(result =>{
        response.json(result)     
        console.log('Eliminado!!!')
     })
@@ -176,17 +176,17 @@ router.route('/docentes').post((request, response)=>{
     })
 })
 
-router.route('/docentes/:id').put((request, response)=>{
+router.route('/docentes').put((request, response)=>{
     let docente = {...request.body}
-    docenteController.editar(docente,request.params.id).then(result =>{
+    docenteController.editar(docente).then(result =>{
        response.json(result)     
         console.log(result)
     })
 })
 
 router.route('/docentes/:id').delete((request, response)=>{
-   let docente = {...request.body}
-   docenteController.deleteId(docente,request.params.id).then(result =>{
+   //let docente = {...request.body}
+   docenteController.deleteId(request.params.id).then(result =>{
        response.json(result)     
        console.log('Eliminado!!!')
     })
@@ -215,17 +215,17 @@ router.route('/records').post((request, response)=>{
     })
 })
 
-router.route('/records/:id').put((request, response)=>{
+router.route('/records').put((request, response)=>{
     let record = {...request.body}
-    recordController.editar(record,request.params.id).then(result =>{
+    recordController.editar(record).then(result =>{
        response.json(result)     
         console.log(result)
     })
 })
 
 router.route('/records/:id').delete((request, response)=>{
-   let record = {...request.body}
-    recordController.deleteId(record,request.params.id).then(result =>{
+    //let record = {...request.body}
+    recordController.deleteId(request.params.id).then(result =>{
        response.json(result)     
        console.log('Eliminado!!!')
     })

@@ -50,7 +50,7 @@ async function crear(record) {
 }
 
 //update
-async function editar(record,ID) {
+async function editar(record) {
     try {
         let pool = await sql.connect(config);
         let editarRecord = await pool.request()
@@ -73,11 +73,11 @@ async function editar(record,ID) {
 }
 //Eliminar
 
-async function deleteId(record,ID) {
+async function deleteId(ID) {
     try {
         let pool = await sql.connect(config);
         let eliminarRecord = await pool.request()
-        .input('ID', sql.INT,record.ID,ID)
+        .input('ID', sql.Int,ID)
         .execute('SP_D_RECORD')
          return eliminarRecord.recordset;
     }

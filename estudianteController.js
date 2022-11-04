@@ -47,7 +47,7 @@ async function crear(estudiante) {
 }
 
 //update
-async function editar(estudiante, id) {
+async function editar(estudiante) {
     try {
         let pool = await sql.connect(config);
         let updateEstudiante = await pool.request()
@@ -68,12 +68,13 @@ async function editar(estudiante, id) {
 }
 //Eliminar
 
-async function deleteId(estudiante, id) {
+async function deleteId(ID) {
     try {
         let pool = await sql.connect(config);
 
         let deleteEstudiante = await pool.request()
-            .input('ID', sql.Int, estudiante.ID)
+        //.input('ID', sql.Int, estudiante.ID)
+        .input('ID', sql.Int,ID)
             .execute('SP_D_ESTUDIANTES');
         return deleteEstudiante.recordset;
     }

@@ -49,11 +49,11 @@ async function crear(asignatura) {
 }
 
 //update
-async function editar(asignatura,ID) {
+async function editar(asignatura) {
     try {
         let pool = await sql.connect(config);
         let editarAsignatura = await pool.request()
-        .input('ID', sql.NVarChar,asignatura.ID)
+        .input('ID', sql.Int,asignatura.ID)
         .input('CODIGO', sql.NVarChar,asignatura.CODIGO)
         .input('NOMBRE', sql.NVarChar, asignatura.NOMBRE)
         .input('CREDITOS', sql.Int,asignatura.CREDITOS)
@@ -66,11 +66,12 @@ async function editar(asignatura,ID) {
 }
 //Eliminar
 
-async function deleteId(asignatura,ID) {
+async function deleteId(ID) {
     try {
         let pool = await sql.connect(config);
         let eliminarAsignatura = await pool.request()
-        .input('ID', sql.Int,asignatura.ID,ID)
+        //.input('ID', sql.Int,asignatura.ID,ID)
+        .input('ID', sql.Int,ID)
         .execute('SP_D_ASIGNATURAS')
          return eliminarAsignatura.recordset;
     }
