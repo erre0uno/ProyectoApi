@@ -1,20 +1,17 @@
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-
-</head>
-
-<body>
-
-
+  </head>
+  <body>
             <h1>Api Relacional</h1>
+            <h4>Proyecto relacional con base de datos Sqlserver y procedimientos almacenados</h4>
             <h4>Estudiantes</h4>
             <h4>Docentes</h4>
             <h4>Asignaturas</h4>
             <h4>Record Academinicos</h4>
-
-                <img src="./documentacion/proyecto.png" alt="base">
-            <h1>Nelson Andres Montealegre</h1>
-</body>
-
+            <h1>Autor:Nelson Andres Montealegre</h1>
+  </body>
 </html>
