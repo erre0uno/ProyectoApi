@@ -36,8 +36,8 @@ async function crear(record) {
           
         .input('CODIGO', sql.NVarChar,record.CODIGO)
         .input('PERIODO', sql.NVarChar, record.PERIODO)
-        .input('NOTA1', sql.Decimal,record.NOTA1)
-        .input('NOTA2', sql.Decimal,record.NOTA2)
+        .input('NOTA1', sql.Decimal(2,1),record.NOTA1)
+        .input('NOTA2', sql.Decimal(2,1),record.NOTA2)
         .input('ESTUDIANTE_COD', sql.NVarChar,record.ESTUDIANTE_COD)
         .input('DOCENTE_COD', sql.NVarChar,record.DOCENTE_COD)
           
@@ -59,8 +59,8 @@ async function editar(record) {
         .input('CODIGO', sql.NVarChar,record.CODIGO)
         .input('FECHA_CREACION', sql.Date, record.FECHA_CREACION)
         .input('PERIODO', sql.NVarChar, record.PERIODO)
-        .input('NOTA1', sql.Decimal,record.NOTA1)
-        .input('NOTA2', sql.Decimal,record.NOTA2)
+        .input('NOTA1', sql.Decimal(2,1),record.NOTA1)
+        .input('NOTA2', sql.Decimal(2,1),record.NOTA2)
         .input('ESTUDIANTE_COD', sql.NVarChar,record.ESTUDIANTE_COD)
         .input('DOCENTE_COD', sql.NVarChar,record.DOCENTE_COD)
       
